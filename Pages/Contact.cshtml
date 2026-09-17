@@ -1,0 +1,36 @@
+﻿@page
+@model ContactApp.Pages.ContactModel
+@{
+	ViewData["Title"] = "Contact";
+}
+<h1>Contact Us</h1>
+<p>Please fill out the form below. All fields are required.</p>
+
+<form method="post">
+	<div class="form-row">
+		<label asp-for="Form.Name"></label>
+		<input asp-for="Form.Name" />
+		<span class="validation" asp-validation-for"Form.Name"></span>
+
+	</div>
+
+	<div class="form-row">
+		<label asp-for="Form.Email"></label>
+		<input asp-for="Form.Email" />
+		<span class="validation" asp-validation-for"Form.Email"></span>
+
+	</div>
+
+	<div class="form-row">
+		<label asp-for="Form.Message"></label>
+		<textarea asp-for="Form.Message" rows="5"></textarea>
+		<span class="validation" asp-validation-for="Form.Message"></span>
+	</div>
+
+	<button type="submit">Send</button>
+
+</form>
+
+@section Scripts{
+	<partial name="_ValidationScriptsPartial" />
+}
